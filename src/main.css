@@ -1,3 +1,362 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*ESTILOS GENERALES*/
+
+body {
+    background: #e4e4e4;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p,
+span,
+a {
+    color: #161e22;
+}
+
+*{
+    scroll-behavior: smooth;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*CLASES BEM TAILWIND*/
+
+/*BARRA NAVEGACION*/
+
+.barra-navegacion {
+    @apply h-12 lg:h-16 px-4 md:px-8 xl:px-10 w-full flex items-center font-secondary-font justify-between top-0 left-0 right-0 z-20 md:justify-start max-w-7xl mx-auto
+}
+
+.nav-desktop {
+    @apply hidden md:flex h-full items-center
+}
+
+.nav-desktop__list {
+    @apply flex gap-4 text-sm font-medium
+}
+
+.nav-desktop__list__item {
+    @apply p-2 capitalize px-3 font-semibold rounded-lg overflow-hidden cursor-pointer
+}
+
+/*MENU MOBILE*/
+
+.menu-mobile, .menu-mobile--hidden {
+    @apply fixed top-0 z-40 w-full min-h-[100vh] flex flex-col h-full bg-main-black transition-all md:hidden
+}
+
+.menu-mobile {
+    @apply right-0
+}
+
+.menu-mobile--hidden {
+    @apply -right-full
+}
+
+.menu-mobile__header {
+    @apply h-12 px-4 flex items-center justify-between
+}
+
+.menu-mobile__list {
+    @apply h-full w-full px-4 py-10 flex flex-col justify-center gap-2 items-center
+}
+
+.menu-mobile__list__item {
+    @apply text-main-white p-2 capitalize px-3 text-xl font-semibold
+}
+
+.menu-mobile__footer {
+    @apply p-4
+}
+
+/*BlOQUES REUTILIZABLES*/
+
+/*redes*/
+
+.redes {
+    @apply flex flex-col gap-1
+}
+
+.redes__link {
+    @apply text-xs opacity-50 capitalize text-right cursor-pointer
+}
+
+.redes__link--white {
+    @apply text-main-white
+}
+
+/*logo*/
+
+.logo {
+    @apply gap-2 flex h-full items-center md:w-[200px]
+}
+
+.logo__nombre {
+    @apply font-bold
+}
+
+.logo__nombre--white {
+    @apply text-main-white
+}
+
+/*icono*/
+
+.icono {
+    @apply text-main-black
+}
+
+.icono--small {
+    @apply w-6 h-6
+}
+
+.icono--medium {
+    @apply w-8 h-8
+}
+
+.icono--large {
+    @apply w-10 h-10
+}
+
+.icono--huge {
+    @apply w-20 h-20
+}
+
+.icono--white {
+    @apply text-main-white
+}
+
+/*contenedores imagenes*/
+
+.contenedor-imagen {
+    @apply rounded-lg overflow-hidden
+}
+
+/*texto aside*/
+
+.text-aside {
+    @apply max-w-[80px] capitalize break-words font-semibold min-w-[80px]
+}
+
+/*FOOTER PRINCIPAL*/
+
+.footer-principal {
+    @apply flex justify-between items-start py-10 px-4 md:px-8 xl:px-10 w-full max-w-7xl mx-auto
+}
+
+.footer-principal__nav {
+    @apply grid grid-cols-2 gap-2 capitalize md:grid-cols-[150px,_150px] md:justify-items-center md:gap-x-0 lg:grid-cols-[200px,_200px] xl:grid-cols-[250px,_250px]
+}
+
+.footer-principal__nav__link {
+    @apply md:w-[90px] font-semibold cursor-pointer
+}
+
+/*MAIN*/
+
+.main {
+    @apply mt-12 px-4 md:px-8 xl:px-10 pt-10 lg:mt-16 max-w-7xl mx-auto
+}
+
+/*MAIN SECTION*/
+
+.main-section {
+    @apply relative lg:flex h-fit
+}
+
+.main-section__aside {
+    @apply hidden lg:flex flex-col items-center pt-24 xl:pt-12 min-w-[200px] h-[460px]
+}
+
+.main-section__aside__text {
+    @apply text-sm
+}
+
+.main-section__aside__button {
+    @apply mt-auto self-center
+}
+
+.main-section__info {
+    @apply w-full h-[460px] relative md:h-[500px] lg:h-fit
+}
+
+.main-section__info__desc {
+    @apply absolute w-full h-full flex flex-col gap-5 p-2 md:p-0 pt-20 md:pt-20 xl:pt-10
+}
+
+.main-section__info__titulo {
+    @apply flex flex-col gap-1 capitalize text-[40px] leading-[1] tracking-tighter font-main-font sm:text-7xl lg:text-8xl font-semibold md:[text-shadow:_1px_1px_#afafaf]
+}
+
+.main-section__info__subtitulo {
+    @apply text-sm lg:hidden max-w-[310px] font-semibold
+}
+
+.main-section__info__button {
+    @apply mt-auto self-center lg:hidden flex flex-col items-center justify-center gap-1
+}
+
+.main-section__info__text {
+    @apply text-xs font-semibold uppercase
+}
+
+.main-section__info__image {
+    @apply relative top-0 ml-auto right-0 rounded-lg overflow-hidden w-full h-auto max-w-full md:max-w-[350px] lg:max-w-[450px] md:max-h-[450px] lg:max-h-[550px] max-h-[400px] xl:-top-24 lg:-top-12 -z-[1] opacity-25 md:opacity-60 xl:opacity-80
+}
+
+/*CUSTOM SECTION*/
+
+.custom-section {
+    @apply py-10 w-full grid-cols-1 lg:py-20 grid md:grid-cols-[150px,_calc(100%_-_150px)] lg:grid-cols-[200px,_calc(100%_-_200px)]
+}
+
+.custom-section__aside {
+    @apply hidden md:flex h-full justify-center relative
+}
+
+.custom-section__aside__text {
+    @apply text-xs pt-1 h-fit sticky top-10 lg:top-16 left-0
+}
+
+.custom-section__content {
+    @apply flex flex-col gap-10 w-full
+}
+
+.custom-section__content__title {
+    @apply capitalize font-semibold text-3xl lg:text-4xl xl:text-5xl font-main-font
+}
+
+/*SECTION SERVICIOS*/
+.lista-servicios {
+    @apply max-w-[500px] flex flex-col gap-2 lg:gap-5 lg:max-w-[650px]
+}
+
+.lista-servicios__item {
+    @apply py-4
+}
+
+.lista-servicios__item__header {
+    @apply flex justify-between items-center cursor-pointer
+}
+
+.lista-servicios__item__header__title {
+    @apply text-lg lg:text-2xl capitalize font-semibold
+}
+
+.lista-servicios__item__header__icono, .lista-servicios__item__header__icono--full-opacity {
+    @apply lg:h-9 lg:w-9 transition-transform
+}
+
+.lista-servicios__item__header__icono {
+    @apply rotate-0 opacity-50
+}
+
+.lista-servicios__item__header__icono--full-opacity {
+    @apply rotate-45 opacity-100
+}
+
+.lista-servicios__item__desc, .lista-servicios__item__desc--hidden {
+    @apply transition-all
+}
+
+.lista-servicios__item__desc {
+    @apply opacity-100 visible h-fit p-4
+}
+
+.lista-servicios__item__desc--hidden {
+    @apply opacity-0 invisible h-0 p-0
+}
+
+/*SECTION TRABAJOS*/
+.swiper {
+    @apply w-full 
+}
+
+.contenido-slide {
+    @apply flex flex-col gap-5 cursor-pointer
+}
+
+.contenido-slide__desc {
+    @apply flex flex-col
+}
+
+.contenido-slide__desc__titulo {
+    @apply text-lg uppercase font-medium
+}
+
+.contenido-slide__desc__titulo--mid-opacity {
+    @apply opacity-60
+}
+
+.contenido-slide__desc__titulo--small {
+    @apply text-xs
+}
+
+/*SECTION BREAK*/
+
+.section-break {
+    @apply w-full
+}
+
+.section-break__image {
+    @apply w-full max-h-[150px] md:max-h-full md:h-[250px] lg:h-[300px] overflow-hidden rounded-lg opacity-80
+}
+/*SECTION EXPERIENCIA*/
+
+.section-experiencia {
+    @apply flex gap-5 lg:gap-7
+}
+
+.section-experiencia__numero {
+    @apply flex items-center text-2xl sm:text-5xl lg:text-7xl font-semibold font-main-font
+}
+
+.section-experiencia__tiempo {
+    @apply capitalize font-semibold sm:text-3xl font-main-font lg:text-5xl
+}
+
+.section-experiencia__desc {
+    @apply max-w-[400px] md:max-w-[300px] lg:max-w-[400px] md:text-lg lg:text-2xl
+}
+
+/*FORMULARIO*/
+
+.formulario {
+    @apply grid sm:grid-cols-[1fr,_auto] max-w-[800px]
+}
+
+.formulario__main-info {
+    @apply flex flex-col gap-8
+}
+
+.formulario__main-info__fieldset {
+    @apply flex flex-col gap-2 max-w-[400px]
+}
+
+.formulario__label {
+    @apply text-sm opacity-80 uppercase font-semibold
+}
+
+.formulario__input, .formulario__textarea {
+    @apply rounded-lg p-2 border-[1px] border-main-black border-opacity-15 focus:outline bg-transparent outline-1 [outline-color:_rgba(255,_255,_255,_0.3)]
+}
+
+.formulario__textarea {
+    @apply resize-none h-28
+}
+
+.formulario__button {
+    @apply flex gap-2 px-4 items-center font-semibold mt-5 text-lg md:text-xl justify-self-end sm:self-end w-fit h-fit lg:text-2xl uppercase
+}
+
+.formulario__icon {
+    @apply h-6 w-6 lg:h-8 lg:w-8 pt-1
+}
